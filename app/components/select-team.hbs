@@ -1,0 +1,9 @@
+<div class="sel-team">
+  select team 1
+  <select id="teamA" {{on 'change' this.print}}>
+    <option disabled selected value> -- select an option -- </option>
+    {{#each this.teamnames as | names |}}
+    <option value={{names}}>{{names}}</option>
+    {{/each}}
+  </select>
+</div>
