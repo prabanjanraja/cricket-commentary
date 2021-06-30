@@ -1,8 +1,10 @@
 <div class="sel-team">
-  select team 1
-  <select id="teamA" {{on 'change' this.print}}>
+  <div class="input">
+    Team {{@name}}
+  </div>
+  <select id="team1" class="dropdown input" {{on 'change' this.print}}>
     <option disabled selected value> -- select an option -- </option>
-    {{#each this.teamnames as | names |}}
+    {{#each this.team_names as | names |}}
     <option value={{names}}>{{names}}</option>
     {{/each}}
   </select>
