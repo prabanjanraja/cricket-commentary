@@ -1,15 +1,17 @@
-<h1> Create new matches </h1>
-<SelectTeam @name='A' @function={{this.teamA}} />
-<br>
-<br>
-<SelectTeam @name='B' @function={{this.teamB}} />
-<br>
-<br>
-<input class="input" type="date" id="start" name="trip-start" value={{this.today}} min={{this.today}} {{on 'change'
-  this.date}}>
-<br>
-<br>
-<input class="input" type="time" id="appt" name="appt" min={{this.now}} max="18:00" required{{on 'change' this.time}}>
-<br>
-<br>
-<button class="button input" {{on 'click' this.create_match}} type="submit">Create Match</button>
+<div>
+  <h1> Create new matches </h1>
+  <SelectTeam @name='A' @function={{this.teamA}} />
+  <br>
+  <br>
+  <SelectTeam @name='B' @function={{this.teamB}} />
+  <br>
+  <br>
+  <input class="input" type="date" id="start" name="trip-start" value={{this.today}} min={{this.today}} {{on 'change'
+    this.date}}>
+  <br>
+  <br>
+  <input class="input" type="time" id="appt" name="appt" min={{this.now}} max="18:00" required{{on 'change' this.time}}>
+  <br>
+  <br>
+  <button class="button input" {{on 'click' this.create_match}} type="submit">Create Match</button>
+</div>

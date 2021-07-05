@@ -1,9 +1,16 @@
 {{page-title "Schedule Matches"}}
 <div class="schedule">
 
+  <h1> This is the page where you will see the matches you have scheduled</h1>
+
   <div class="new-match" ali>
 
     <LinkTo @route="new-match" class="button">New match</LinkTo>
   </div>
 
+  {{#each @model as |match|}}
+  <li>
+    <Schedule::Matches @match={{match}} />
+  </li>
+  {{/each}}
 </div>
