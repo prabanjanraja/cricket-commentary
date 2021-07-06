@@ -13,6 +13,16 @@
 schedule page styles
  */
 
+ .schedule-match {
+   padding: 20px;
+   background-color: rgb(163, 163, 163)
+ }
+
+ .match-title {
+   font-size:x-large;
+   font-weight: 600;
+ }
+
  .schedule{
    /* width:100%; */
    height: 100%;

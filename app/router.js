@@ -9,4 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('schedule');
   this.route('new-match');
+  this.route('match', { path: '/matches/:match_id' });
 });

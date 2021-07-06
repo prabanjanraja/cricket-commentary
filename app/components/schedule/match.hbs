@@ -1,8 +1,13 @@
-<article class="">
+<article class="schedule-match">
   {{!--
   <Rental::Image src={{@match.image}} alt="A picture of {{@match.title}}" /> --}}
+  <h3 class="match-title">
+    <LinkTo @route="match" @model={{@match}}>
+      {{@match.title}}
+    </LinkTo>
+  </h3>
   <div class="details">
-    <h3>{{@match.title}}</h3>
+    <br>
     <div class="detail owner">
       <span>Team A:</span> {{@match.teamA}}
     </div>
