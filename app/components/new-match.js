@@ -11,6 +11,7 @@ class Match {
 }
 export default class NewMatchComponent extends Component {
   @service('team-names') teamNames;
+  @service time;
   @tracked teamnames = this.teamNames.teams;
 
   curr_match = new Match();
@@ -61,7 +62,7 @@ export default class NewMatchComponent extends Component {
   }
 
   @action
-  time({ target }) {
+  set_time({ target }) {
     this.curr_match.time = target.value;
   }
 
