@@ -4,8 +4,8 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'cricket-commentary',
     environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '/cricket_commentary',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
