@@ -15,8 +15,10 @@ export default class SelectTeamComponent extends Component {
   @action
   print({ target }) {
     try {
+      // execute the function passed over to set the team name
       this.args.function(target.value);
     } catch (error) {
+      // reset the dropdown
       target.value = null;
       alert("The team names can't be same")
     }

@@ -6,10 +6,10 @@
   <SelectTeam @name='B' @function={{this.teamB}} />
   <br>
   <br>
-  <input class="input" type="date" id="start" value={{this.today}} min={{this.today}} {{on 'change' this.date}}>
+  <input class="input" type="date" id="start" value={{this.time.today}} min={{this.today}} {{on 'change' this.date}}>
   <br>
   <br>
-  <input class="input" type="time" id="time" min={{this.now}} max="18:00" required{{on 'change' this.set_time}}>
+  <input class="input" type="time" id="time" value={{this.time.now}} required{{on 'change' this.set_time}}>
   <br>
   <br>
   <button class="button input" {{on 'click' this.create_match}} type="submit">Create Match</button>

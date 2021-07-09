@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 class Match {
-  @tracked teama = false;
+  @tracked teama = null;
   @tracked teamb = null;
   @tracked date = null;
   @tracked time = null;
@@ -16,45 +16,22 @@ export default class NewMatchComponent extends Component {
 
   curr_match = new Match();
 
-  teamA = (value) => {
-    this.curr_match.teama = value;
+  // a function to check both team names are not the same.
+  check = () => {
     if (this.curr_match.teama === this.curr_match.teamb) {
       return error;
     }
+  }
+  // a function to set the team name that needs to be passed over to the component
+  teamA = (value) => {
+    this.curr_match.teama = value;
+    this.check();
   };
 
   teamB = (value) => {
     this.curr_match.teamb = value;
-    if (this.curr_match.teama === this.curr_match.teamb) {
-      return error;
-    }
+    this.check();
   };
-
-  get today() {
-    let currentDate = new Date();
-    console.log(currentDate);
-    let cDay = currentDate.getDate();
-    if (cDay < 10) {
-      cDay = '0' + cDay;
-    }
-    let cMonth = currentDate.getMonth() + 1;
-    if (cMonth < 10) {
-      cMonth = '0' + cMonth;
-    }
-    let cYear = currentDate.getFullYear();
-    var today = cYear + '-' + cMonth + '-' + cDay;
-    this.curr_match.date = today;
-    return today;
-  }
-  get team_names() {
-    return this.teamnames;
-  }
-  // get currrent local time
-
-  get now() {
-    let currentDate = new Date();
-    return currentDate.getHours() + ":" + currentDate.getMinutes();
-  }
 
   @action
   date({ target }) {
@@ -66,15 +43,34 @@ export default class NewMatchComponent extends Component {
     this.curr_match.time = target.value;
   }
 
+
+  is_valid = (match) => {
+    console.log("is_valid");
+    if (match.teama === null || match.teamb === null) {
+      alert("Set the team names");
+      return error
+    }
+    // if date value is not set then choose the current date
+    if (match.date === null) {
+      match.date = this.time.today;
+    }
+    // if time is not set then choose the current time.
+    if (match.time === null) {
+      match.time = this.time.now;
+    }
+  }
+
+  // post the curr_match to the database
   @action
   create_match() {
     var match = this.curr_match;
     try {
-      if (match.teama === match.teamb)
-        error("same teams can't compete");
+      // check if the current match is valid.
+      this.is_valid(match);
     } catch (error) {
-      alert(error.text);
+      console.log(this.curr_match);
+      return;
     }
-    console.log(this.curr_match);
+    console.log("Success");
   }
 }
