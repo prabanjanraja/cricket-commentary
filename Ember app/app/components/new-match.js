@@ -69,8 +69,13 @@ export default class NewMatchComponent extends Component {
       this.is_valid(match);
     } catch (error) {
       console.log(this.curr_match);
-      return;
     }
+    // send curr_match to "/servlet/welcome" using ajax.
+
+    $.post("/servlet/welcome", this.curr_match);
+
+
+    // send curr_match as string to "/servlet/welcome" using fetch api.
     console.log("Success");
   }
 }
