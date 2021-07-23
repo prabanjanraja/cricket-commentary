@@ -1,0 +1,19 @@
+{{#if this.started}}
+<table class="scores-table">
+  <caption>Scores Table</caption>
+  <thead>
+    <th>Over</th>
+    <th colspan="6">Runs</th>
+    <th>Total</th>
+  </thead>
+  <tbody>
+    {{#each this.over_score as |overScore|}}
+    <Createrow @input_data={{overScore}} />
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<div class = "center">
+      <h1>The Match will start soon </h1>
+</div>
+{{/if}}

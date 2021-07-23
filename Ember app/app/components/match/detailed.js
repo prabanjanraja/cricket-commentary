@@ -8,13 +8,11 @@ export default class MatchDetailedComponent extends Component {
 
   @action
   print() {
+    // create a json object to represent this.match.id
+    let matchId = {
+      'match_id': this.match.id,
+    };
     console.log(this.match);
-    console.log(this.match.date);
-    console.log(this.time.today);
-    console.log(this.match.date >= this.time.today);
-    console.log(this.match.date <= this.time.today);
+    $.post("/servlet/schedule", matchId);
   }
-
-  // get
-
 }

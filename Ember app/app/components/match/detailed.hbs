@@ -1,3 +1,4 @@
 <h1>{{@match.title}}</h1>
-<h3>This is the match between {{@match.title}}</h3>
-<button type="button" {{on 'click' this.print}}>hello</button>
+{{!-- pass the match id to the scores table component  --}}
+{{!-- this is a handlebars helper --}}
+<Scoretable @id={{@match.id}}/>
