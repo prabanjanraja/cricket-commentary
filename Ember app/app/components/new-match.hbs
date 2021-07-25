@@ -13,5 +13,16 @@
   <input class="input" type="time" id="time" value={{this.time.now}} required{{on 'change' this.set_time}}>
   <br>
   <br>
+  {{!-- create a dropdown to select overs the dropdown values can be from 5 to 10 --}}
+  <select class="input" id="overs" required{{on 'change' this.set_overs}} >
+    <option value="5">5 overs</option>
+    <option value="6">6 overs</option>
+    <option value="7">7 overs</option>
+    <option value="8">8 overs</option>
+    <option value="9">9 overs</option>
+    <option value="10">10 overs</option>
+  </select>
+  <br>
+  <br>
   <button class="button input" {{on 'click' this.create_match}} type="submit">Create Match</button>
 </div>

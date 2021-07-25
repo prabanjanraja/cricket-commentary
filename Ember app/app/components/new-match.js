@@ -8,6 +8,7 @@ class Match {
   @tracked teamb = null;
   @tracked date = null;
   @tracked time = null;
+  @tracked overs = null;
 }
 export default class NewMatchComponent extends Component {
   @service('team-names') teamNames;
@@ -58,20 +59,30 @@ export default class NewMatchComponent extends Component {
     if (match.time === null) {
       match.time = this.time.now;
     }
+    // if overs is not set then choose the current overs as 5
+    if (match.overs === null) {
+      match.overs = 5;
+    }
+  }
+
+  // create an action to set the number of overs
+  @action
+  set_overs({ target }) {
+    this.curr_match.overs = target.value;
   }
 
   // post the curr_match to the database
   @action
   create_match() {
-    var match = this.curr_match;
     try {
       // check if the current match is valid.
-      this.is_valid(match);
+      this.is_valid(this.curr_match);
     } catch (error) {
-      console.log(this.curr_match);
     }
-    // send curr_match to "/servlet/welcome" using ajax.
+    console.log(this.curr_match);
 
+
+    // send curr_match to "/servlet/welcome" using ajax.
     $.post("/servlet/welcome", this.curr_match);
 
 
