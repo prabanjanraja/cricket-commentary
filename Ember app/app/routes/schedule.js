@@ -6,9 +6,8 @@ export default class ScheduleRoute extends Route {
     console.log(response);
     let { data } = await response.json();
     let result = data.map((schedule) => {
-      let { attributes } = schedule;
-      let title = attributes.teamA + ' VS ' + attributes.teamB;
-      return { title, ...attributes };
+      let title = schedule.teamA + ' VS ' + schedule.teamB;
+      return { title, ...schedule };
     });
     console.log(result);
     return result;

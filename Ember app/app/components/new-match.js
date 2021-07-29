@@ -13,6 +13,7 @@ class Match {
 export default class NewMatchComponent extends Component {
   @service('team-names') teamNames;
   @service time;
+  @service router;
   @tracked teamnames = this.teamNames.teams;
 
   curr_match = new Match();
@@ -85,8 +86,7 @@ export default class NewMatchComponent extends Component {
     // send curr_match to "/servlet/welcome" using ajax.
     $.post("/servlet/welcome", this.curr_match);
 
+    this.router.transitionTo('schedule');
 
-    // send curr_match as string to "/servlet/welcome" using fetch api.
-    console.log("Success");
   }
 }

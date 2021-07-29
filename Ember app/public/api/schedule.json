@@ -1,12 +1,17 @@
 {
-  "data": [
-    {
-      "attributes": {
-        "teamA": "Chennai Super Kings",
-        "teamB": "Mumbai Indians",
-        "date": "2021-07-09",
-        "time": "19:00"
-      }
-    }
-  ]
+    "data": [
+        {
+            "id": "9618",
+            "teamA": "Indonesia",
+            "teamB": "New Zealand",
+            "date": "2021-07-25",
+            "time": "Sun Jul 25 12:10:00 IST 2021"
+        }, {
+            "id": "1",
+            "teamA": "Pakistan",
+            "teamB": "South Africa",
+            "date": "2021-07-25",
+            "time": "Sun Jul 25 14:50"
+        }
+    ]
 }
