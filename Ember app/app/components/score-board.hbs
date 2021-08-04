@@ -1,8 +1,23 @@
 {{#if this.started}}
-<Scoretable @over_score = {{this.over_score1}} />
-<Scoretable @over_score = {{this.over_score2}} />
+<nav>
+  <button type="button" class="team-tab" {{on 'click' this.displayA}}>{{this.teamA}}</button>
+  <button type="button" class="team-tab" {{on 'click' this.displayB}}> {{this.teamB}} </button>
+</nav>
+{{#if this.display}}
+<div>
+  <Scoretable @over_score={{this.over_score1}} @team={{this.teamA}} @target={{this.target1}}
+    @wickets={{this.wickets1}} />
+  <PlayerTable @player_record={{this.teamA_score}} />
+</div>
 {{else}}
-<div class = "center">
-      <h1>The Match will start soon </h1>
+<div>
+  <Scoretable @over_score={{this.over_score2}} @team={{this.teamB}} @target={{this.target2}}
+    @wickets={{this.wickets2}} />
+  <PlayerTable @player_record={{this.teamB_score}} />
+</div>
+{{/if}}
+{{else}}
+<div class="center">
+  <h1>The Match will start soon </h1>
 </div>
 {{/if}}

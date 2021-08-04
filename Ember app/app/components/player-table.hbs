@@ -1,0 +1,12 @@
+<table class="persons-table">
+  <caption>Players Table</caption>
+  <thead>
+    <th>Players</th>
+    <th>Runs Scored</th>
+  </thead>
+  <tbody>
+    {{#each @player_record as |record| }}
+    <Createrow @input_data={{record}} />
+    {{/each}}
+  </tbody>
+</table>

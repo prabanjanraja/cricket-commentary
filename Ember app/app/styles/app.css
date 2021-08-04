@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
-
 .inner {
     position: absolute;
     padding: x;
@@ -8,6 +7,7 @@
 .outer {
     position: relative;
 }
+
 
 /*
 schedule page styles
@@ -30,8 +30,8 @@ schedule page styles
     align-content: center;
     align-items: bold;
     vertical-align: center;
-
 }
+
 .new-match {
     padding: 35px;
     align-content: center;
@@ -67,6 +67,8 @@ li {
     flex-wrap: wrap;
     align-content: space-around;
 }
+
+
 /**
  * Base Elements
  */
@@ -75,11 +77,13 @@ li {
     margin: 0;
     padding: 0;
 }
+
 .center {
     text-align: center;
     min-height: 100%;
     align-content: center;
 }
+
 body,
 h1,
 h2,
@@ -114,6 +118,7 @@ p {
     margin-bottom: 15px;
 }
 
+
 /**
  * Button
  */
@@ -134,6 +139,8 @@ p {
 .button:hover {
     opacity: 1;
 }
+
+
 /**
  * Body Container
  */
@@ -144,6 +151,8 @@ p {
     background: #f9f9f9;
     margin: 0 auto;
 }
+
+
 /**
  * Top Navigation
  */
@@ -243,6 +252,8 @@ p {
 .menu .results li:hover {
     background: #f3f3f3;
 }
+
+
 /**
  * Content Area
  */
@@ -250,6 +261,7 @@ p {
 .body {
     padding: 15px;
 }
+
 
 /**
  * Utilities
@@ -285,10 +297,12 @@ p {
     opacity: 0.9;
     display: inline-block;
 }
+
 .dropdown {
     font-size: 20px;
     font-weight: bold;
 }
+
 .screen-reader {
     position: absolute;
     overflow: hidden;
@@ -315,9 +329,11 @@ table {
     font-weight: 900;
     display: inline-table;
 }
+
 .scores-table {
     min-width: 65%;
 }
+
 caption {
     font-size: xx-large;
     font-style: italic;
@@ -333,4 +349,17 @@ td {
     border-style: solid;
     padding: 5px;
     font-size: 120%;
+}
+
+.persons-table {
+    min-width: 33%;
+}
+
+.team-tab {
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 45%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
